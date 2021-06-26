@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,8 @@ Auth::routes();
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('products', ProductController::class);
 
 
 
