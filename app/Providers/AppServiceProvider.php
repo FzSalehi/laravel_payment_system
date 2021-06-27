@@ -2,9 +2,11 @@
 
 namespace App\Providers;
 
+use App\Support\Basket\Contracts\BasketInterface;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
+use App\Support\Basket\SessionBasket;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,5 +29,9 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
         Paginator::useBootstrap();
+
+        $this->app->bind(BasketInterface::class, function($app){
+            return new SessionBasket('cart');
+        });
     }
 }
