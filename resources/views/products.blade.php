@@ -16,7 +16,7 @@
 					<div class="card-body">
 					<h5 class="card-title">{{$product->title}}</h5>
 						<p class="card-text"> {{$product->description}} </p>
-					<a href="{{-- {{route('basket.add' , $product->id)}} --}}" class="btn btn-primary">@lang('payment.add to basket')</a>
+					<a href="{{route('basket.add' , $product->id)}}" class="btn btn-primary">@lang('payment.add to basket')</a>
 					</div>
 				</div>
 			</div>

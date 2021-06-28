@@ -2,7 +2,7 @@
 
 
 return [
-	'add to basket' => 'افزودن به سبد خرید',
+	'add to basket' => 'کالا به سبد خرید اضافه شد',
 	'basket' => 'سبد خرید',
 	'quantity' => 'تعداد',
 	'product price' => 'قیمت محصول',
