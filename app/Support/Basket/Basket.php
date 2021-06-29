@@ -44,6 +44,25 @@ class Basket
         ]);
     }
 
+    public function all()
+    {
+        $products = Product::find(array_keys($this->storage->all()));
+        foreach($products as $product){
+            $product->quantity = $this->get($product)['quantity'];
+        }
+        return $products;
+    }
+
+    public function subTotal()
+    {
+        $total = 0;
+        foreach($this->all() as $item){
+            $total += $item->price * $item->quantity;
+        }
+
+        return $total;
+    }
+
     public function get(Product $product)
     {
         return $this->storage->get($product->id);

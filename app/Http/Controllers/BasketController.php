@@ -26,10 +26,15 @@ class BasketController extends Controller
         }catch(QuantityExceededException $e){
 
             return back()->with('error', __('payment.quantity exceeded'));
-            
+
         }
 
+    }
 
+    public function index()
+    {
+        $items = $this->basket->all();
+        return view('basket',compact('items'));
     }
 
     public function has(Product $product)
