@@ -1,4 +1,4 @@
-{{-- @inject('basket' , 'App\Support\Basket\Basket') --}}
+@inject('basket' , 'App\Support\Basket\Basket')
 <nav class="navbar navbar-expand-lg navbar-light bg-light ">
     <a class="navbar-brand" href="#">
 	<img src="{{asset('img/logo.png')}}" width="30" height="30" class="d-inline-block align-top" alt="">
@@ -10,7 +10,7 @@
     </button>
     <div class="auth-btn collapse justify-content-end navbar-collapse">
 	<a href="{{-- {{route('basket.index')}} --}}"  class="btn btn-info mr-2">
-		@lang('payment.basket') <span class="badge badge-light">{{-- {{$basket->itemCount()}} --}}</span>
+		@lang('payment.basket') <span class="badge badge-light">{{$basket->countItems()}}</span>
 	</a>
 	@guest
 	<a class="btn btn-info  mr-2" href="/login">ورود</a>
