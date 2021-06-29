@@ -28,6 +28,11 @@ class Basket
 
     }
 
+    public function countItems()
+    {
+        return $this->storage->count();
+    }
+
     public function update(Product $product,int $quantity)
     {
         if(!$product->hasStock($quantity)){
