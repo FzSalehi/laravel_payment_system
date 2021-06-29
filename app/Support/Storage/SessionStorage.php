@@ -24,7 +24,7 @@ class SessionStorage implements StorageInterface
 
     public function all()
     {
-        return session()->get($this->storageName);
+        return session()->get($this->storageName) ?? [];
     }
 
     public function exists($index)
@@ -39,7 +39,7 @@ class SessionStorage implements StorageInterface
 
     public function count()
     {
-        session()->count($this->all());
+        return count($this->all());
     }
 
     public function clear()
